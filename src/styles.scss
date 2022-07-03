@@ -32,59 +32,25 @@ button {
   border: none;
   border-radius: 0.3em;
 }
-label {
-  position: relative;
-  padding-left: 35px;
-  text-transform: capitalize;
-  input{
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  input:checked ~ span {
-    background-color: $lilla;
-  }
-  input:checked ~ span:after {
-    display: block;
-  }
-  span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    border-radius: 0.2em;
-    background-color: #eee;
-  }
-  span:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  span:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-}
 ul {
   padding: 0;
   list-style: none;
   li {
     display: block;
+    label:first-letter {
+      color: #e85252;
+      text-transform: uppercase;
+    }
     label {
       position: relative;
-      padding-left: 35px;
-      text-transform: capitalize;
-      input{
+      p::first-letter{
+        text-transform: capitalize;
+      }
+      p {
+        display: inline-block;
+        padding-left: 35px;
+      }
+      input {
         position: absolute;
         opacity: 0;
         cursor: pointer;
@@ -97,7 +63,7 @@ ul {
       input:checked ~ span:after {
         display: block;
       }
-      span{
+      span {
         position: absolute;
         top: 0;
         left: 0;

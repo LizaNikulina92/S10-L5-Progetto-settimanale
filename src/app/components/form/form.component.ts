@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { discardPeriodicTasks } from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { Task } from 'src/app/classes/task';
 import { ITodo } from 'src/app/interfaces/itodo';
 import { TodosService } from 'src/app/services/todos.service';
@@ -14,13 +15,14 @@ export class FormComponent implements OnInit {
   title!: string;
   completed!: boolean;
   tasks!: ITodo[];
+  completedArr! : ITodo[];
 
 
-  constructor(public todosService: TodosService) {}
+  constructor(public todosService: TodosService, public router: Router) {}
 
   ngOnInit(): void {
     this.tasks = this.todosService.getTaskList();
-    console.log(this.tasks)
+    this.completedArr = this.todosService.getCompletedList();
   }
 
   addTask(): void {

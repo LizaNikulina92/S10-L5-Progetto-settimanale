@@ -1,1 +1,2 @@
-<app-no-task></app-no-task>
+<app-todo-task *ngIf="completedArr.length > 0"></app-todo-task>
+<app-no-task *ngIf="completedArr.length === 0"></app-no-task>
