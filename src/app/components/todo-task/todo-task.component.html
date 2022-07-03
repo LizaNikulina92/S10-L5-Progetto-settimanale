@@ -1,0 +1,10 @@
+<ul *ngIf="tasks.length > 0">
+  <li *ngFor="let item of tasks">
+    <label>{{item.title}}
+      <input type="checkbox">
+      <span></span>
+    </label>
+    <button type="button" (click)="delTask(item)">x</button>
+    <hr />
+  </li>
+</ul>

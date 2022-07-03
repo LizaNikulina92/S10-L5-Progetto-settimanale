@@ -1,0 +1,4 @@
+<div [ngClass]="{full: tasks.length > 0}">
+  <input type="text" name="task" id="task" placeholder="Add new task" [(ngModel)]="title"/>
+  <button type="button" (click)="addTask()">+</button>
+</div>
