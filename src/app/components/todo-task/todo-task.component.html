@@ -1,22 +1,27 @@
 <ul *ngIf="this.router.url.includes('todo')">
   <li *ngFor="let item of tasks">
-    <label><p>{{item.title}}</p>
-      <input type="checkbox">
-      <span (click)="changeValue(item)"></span>
-    </label>
-    <button type="button" (click)="delTask(item)">x</button>
+    <label
+      ><p>{{ item.title }}</p>
+      <input type="checkbox" />
+      <span (click)="changeValue(item)"></span> </label
+    ><button class="red" type="button" (click)="delTask(item)">x</button>
+    <button class="orange" type="button" (click)="modifyTask(item)">modify</button>
     <hr />
   </li>
 </ul>
 
 <ul *ngIf="this.router.url.includes('completed')">
   <li *ngFor="let item of completed">
-    <label><p>{{item.title}}</p>
-      <input type="checkbox" checked="true">
+    <label
+      ><p>{{ item.title }}</p>
+      <input type="checkbox" checked="true" />
       <span (click)="changeValue(item)"></span>
     </label>
-    <button type="button" (click)="delTask(item)">x</button>
+    <button class="red" type="button" (click)="delTask(item)">x</button>
     <hr />
   </li>
 </ul>
+
+<app-loading class="hide"></app-loading>
+
 

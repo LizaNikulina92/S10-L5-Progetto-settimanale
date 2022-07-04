@@ -1,10 +1,31 @@
-<div *ngIf="this.router.url.includes('todo')" [ngClass]="{full: tasks.length > 0}">
-  <input type="text" name="task" id="task" placeholder="Add new task" [(ngModel)]="title"/>
+<div id="loading" class="hide">
+  <app-loading></app-loading>
+</div>
+
+<div
+  *ngIf="this.router.url.includes('todo')"
+  [ngClass]="{ full: tasks.length > 0 }"
+>
+  <input
+    type="text"
+    name="task"
+    id="task"
+    placeholder="Add new task"
+    [(ngModel)]="title"
+  />
   <button type="button" (click)="addTask()">+</button>
 </div>
 
-
-<div *ngIf="this.router.url.includes('completed')"[ngClass]="{full: completedArr.length > 0}">
-  <input type="text" name="task" id="task" placeholder="Add new task" [(ngModel)]="title"/>
+<div
+  *ngIf="this.router.url.includes('completed')"
+  [ngClass]="{ full: completedArr.length > 0 }"
+>
+  <input
+    type="text"
+    name="task"
+    id="task"
+    placeholder="Add new task"
+    [(ngModel)]="title"
+  />
   <button type="button" (click)="addTask()">+</button>
 </div>

@@ -11,8 +11,9 @@ export class TodoPage implements OnInit {
   tasks!: ITodo[];
 
   constructor(public todosService:TodosService ) {}
-
   ngOnInit(): void {
     this.tasks = this.todosService.getTaskList();
   }
+
 }
+

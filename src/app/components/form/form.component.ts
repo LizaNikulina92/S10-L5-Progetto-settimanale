@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { discardPeriodicTasks } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { Task } from 'src/app/classes/task';
@@ -15,8 +15,7 @@ export class FormComponent implements OnInit {
   title!: string;
   completed!: boolean;
   tasks!: ITodo[];
-  completedArr! : ITodo[];
-
+  completedArr!: ITodo[];
 
   constructor(public todosService: TodosService, public router: Router) {}
 
@@ -26,10 +25,16 @@ export class FormComponent implements OnInit {
   }
 
   addTask(): void {
-    let taskId: number = this.tasks.length+1;
+    let taskId: number = this.tasks.length + 1;
     let obj = new Task(taskId, this.title, false);
-    this.todosService.addTask(obj);
-    this.title = '';
-    console.log(obj);
+    let load: any = document.querySelector('#loading');
+    setTimeout(() => {
+      this.todosService.addTask(obj);
+      this.title = '';
+      load.style.display = 'none';
+    }, 2000);
+/*     setTimeout(() => {
+    }, 2000); */
+    load.style.display = 'block';
   }
 }

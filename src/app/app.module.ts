@@ -10,6 +10,8 @@ import { TodoTaskComponent } from './components/todo-task/todo-task.component';
 import { FormComponent } from './components/form/form.component';
 import { FormsModule } from '@angular/forms';
 import { NoTaskComponent } from './components/no-task/no-task.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { NoTaskComponent } from './components/no-task/no-task.component';
     NotFoundPage,
     TodoTaskComponent,
     FormComponent,
-    NoTaskComponent
+    NoTaskComponent,
+    NotFoundComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

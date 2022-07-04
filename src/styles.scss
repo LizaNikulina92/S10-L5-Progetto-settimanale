@@ -37,10 +37,6 @@ ul {
   list-style: none;
   li {
     display: block;
-    label:first-letter {
-      color: #e85252;
-      text-transform: uppercase;
-    }
     label {
       position: relative;
       p::first-letter{
@@ -90,7 +86,7 @@ ul {
       }
     }
     button {
-      background-color: $red;
+     /*  background-color: $red; */
       float: right;
     }
     hr {

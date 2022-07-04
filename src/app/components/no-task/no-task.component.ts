@@ -9,12 +9,10 @@ import { TodosService } from 'src/app/services/todos.service';
 })
 export class NoTaskComponent implements OnInit {
 
-  tasks!: ITodo[];
-
-  constructor(public todosService: TodosService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.tasks = this.todosService.getTaskList();/*  */
+
   }
 
 }
